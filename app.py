@@ -139,7 +139,7 @@ class PlaneGoesToBot:
                 message = updates.get('message', updates.get('edited_message', {}))
                 message_type = 'message' if updates.get('message', None) \
                     else 'edited_message'
-                
+                logger.debug(f"Received message: {message}")
                 if message.get('location', None) is None:
                     await self.telegram_channel.send_text_message(
                         message.get('chat', {}).get('id', None),
@@ -156,7 +156,6 @@ class PlaneGoesToBot:
             except Exception as e:
                 logger.exception(f"Failed to process updates: {e}")
                 return ResponseMessage(False, "Failed to process updates.")
-
 
     async def information_retrieval(self, message: Dict[Any, Any], message_type: Text):
         user_location = message.get('location')
@@ -199,7 +198,6 @@ class PlaneGoesToBot:
         )
         return
      
-
     def run(self) -> None:
         uvicorn.run(
             app=self.rest_api_app,
