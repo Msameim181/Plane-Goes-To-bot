@@ -42,13 +42,11 @@ def logger_creator(
         console_handler, stream_level, console_formatter, logger
     )
     logger.setLevel(logging.DEBUG)
-
     logger.propagate = False
     return logger
 
 def logger_settings(handler, level, formatter, logger):
     handler.setLevel(level)
     handler.setFormatter(formatter)
-
     logger.addHandler(handler)
     return logger
