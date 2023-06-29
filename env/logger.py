@@ -24,15 +24,14 @@ class ColoredFormatter(logging.Formatter):
         self._message_color_format = self.green + "{}" + self.reset
 
     def format(self, record: logging.LogRecord) -> str:
-        # replace the level name with related level color
-        record.levelname = self._level_color_format.get(record.levelno, "").format(record.levelname)
+        record.levelname = self._level_color_format.get(
+            record.levelno, "").format(record.levelname)
         record.msg = self._message_color_format.format(record.msg)
         return super(ColoredFormatter, self).format(record) + self.splitter
     
 def logger_creator(
         name, 
-        stream_level=logging.DEBUG, 
-        filename: str = ""):
+        stream_level=logging.DEBUG):
     logger = logging.getLogger(name)
     console_format = '[%(levelname)s] %(asctime)s-FILENAME:%(filename)s-MODULE:%(module)s-FUNC:%(funcName)s :: \n%(message)s'
     console_formatter = ColoredFormatter(
