@@ -1,10 +1,8 @@
-# Plane-Goes-To-bot
-<!-- ✈️ I Wish I Knew Where That Plane Goes To -->
-<!-- create an h2 in the center -->
+
+<h1 align="center">✈️ I Wish I Knew Where That Plane Goes To</h1>
 <p align="center">
   <img src="https://github.com/Msameim181/Plane-Goes-To-bot/blob/main/assets/a_plane.jpg" alt="AirPlane" width="200"/>
 </p>
-<h2 align="center">✈️ I Wish I Knew Where That Plane Goes To</h2>
 
 ## Online Available
 
