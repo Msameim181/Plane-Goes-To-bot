@@ -1,2 +1,56 @@
 # Plane-Goes-To-bot
-✈️ I Wish I Knew Where That Plane Goes To
+<!-- ✈️ I Wish I Knew Where That Plane Goes To -->
+<!-- create an h2 in the center -->
+<p align="center">
+  <img src="https://github.com/Msameim181/Plane-Goes-To-bot/blob/main/assets/a_plane.jpg" alt="AirPlane" width="200"/>
+</p>
+<h2 align="center">✈️ I Wish I Knew Where That Plane Goes To</h2>
+
+## Online Available
+
+On Telegram: [@Plane_Goes_To_bot](https://t.me/Plane_Goes_To_bot)
+
+
+## How to use
+
+1. Clone the repo
+
+2. Create a .env file with the following variables
+
+```bash
+NETWORK_NAME=plane_bot
+
+TELEGRAM_BOT_TOKEN=...
+TELEGRAM_BOT_USERNAME=your_bot_username
+TELEGRAM_BOT_WEBHOOK_URL=https://your.domain.com
+TELEGRAM_BOT_WEBHOOK_DISABLE=0 # 0: Using your own domain, 1: Using ngrok domain
+
+APPLICATION_PORT=8000
+APPLICATION_HOST_NAME=plane_bot_app
+
+NGROK_AUTHTOKEN=...
+NGROK_HOST_NAME=ngrok
+NGROK_PORT=4040
+NGROK_REGION=us
+NGROK_VERSION="2"
+```
+
+3. Build the docker image
+
+```bash
+docker build -t plane_bot .
+```
+
+4. Create a docker network
+
+```bash
+docker network create plane_bot
+```
+
+5. Run the `docker compose` command
+
+```bash
+docker-compose up -d
+```
+
+6. Enjoy

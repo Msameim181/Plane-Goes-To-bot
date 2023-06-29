@@ -1,0 +1,13 @@
+aiogram
+fastapi
+django-environ
+uvicorn
+environ
+pydantic
+sanic_openapi
+requests
+aiohttp
+geopy
+FlightRadarAPI
+
+

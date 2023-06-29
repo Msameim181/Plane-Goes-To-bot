@@ -122,11 +122,14 @@ celerybeat.pid
 # Environments
 .env
 .venv
-env/
+env/.env
+env/ngrok.yml
+env/ngrok/
 venv/
 ENV/
 env.bak/
 venv.bak/
+planeenv/
 
 # Spyder project settings
 .spyderproject

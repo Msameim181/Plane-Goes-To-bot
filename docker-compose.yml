@@ -1,0 +1,47 @@
+version: '3.7'
+
+networks:
+  plane_bot:
+    external: true
+
+services:
+  ngrok_setup_service:
+    image: plane_bot:latest
+    container_name: ngrok_setup
+    volumes:
+      - ./:/app/
+    command: >
+      bash -c "python3 env/ngrok_config.py"
+
+  ngrok_service:
+    image: ngrok/ngrok:latest
+    container_name: ngrok
+    restart: always
+    ports:
+      - "10403:4040"
+    command:
+      - start
+      - --all
+      - --config=/etc/ngrok.yml
+    volumes:
+      - ./env/ngrok.yml:/etc/ngrok.yml
+    depends_on:
+      - ngrok_setup_service
+    networks:
+      - plane_bot
+    hostname: ngrok1
+
+  plane_bot_app_service:
+    image: plane_bot:latest
+    container_name: plane_bot_app
+    ports:
+      - "6545:8000"
+    volumes:
+      - ./:/app/
+    command: >
+      bash -c "python3 main.py"
+    networks:
+      - plane_bot
+    hostname: plane_bot_app
+    depends_on:
+      - ngrok_service
