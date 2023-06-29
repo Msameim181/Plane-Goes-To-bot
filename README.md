@@ -1,7 +1,7 @@
 
 <h1 align="center">✈️ I Wish I Knew Where That Plane Goes To</h1>
 <p align="center">
-  <img src="https://github.com/Msameim181/Plane-Goes-To-bot/blob/main/assets/a_plane.jpg" alt="AirPlane" width="200"/>
+  <img src="https://github.com/Msameim181/Plane-Goes-To-bot/blob/main/assets/a_plane.jpg" alt="AirPlane"/>
 </p>
 
 ## Online Available
