@@ -233,8 +233,8 @@ class PlaneGoesToBot:
             west = geodesic(kilometers=distance).destination(location, 270)
             return f"{north.latitude},{south.latitude},{west.longitude},{east.longitude}"
         
-        logger.info(f"Getting flight details..., from: {get_square(lat, lon, 15)}")
-        flights_detail = fr_api.get_flights(bounds=f"{get_square(lat, lon, 15)}")
+        logger.info(f"Getting flight details..., from: {get_square(lat, lon, 50)}")
+        flights_detail = fr_api.get_flights(bounds=f"{get_square(lat, lon, 50)}")
         logger.info(f"Founds {len(flights_detail)} flights.")
 
         flights_information = []
@@ -280,9 +280,7 @@ class PlaneGoesToBot:
                 'status_text': flight.status_text,
                 'status_icon': flight.status_icon,
 
-                'time_details': {
-                    'scheduled': flight.time_details,
-                },
+                'time_details': flight.time_details,
 
             })
 
