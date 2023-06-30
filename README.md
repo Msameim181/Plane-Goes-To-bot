@@ -6,7 +6,7 @@
 
 ## Online Available
 
-On Telegram: [@Plane_Goes_To_bot](https://t.me/Plane_Goes_To_bot)
+On Telegram: [@PlaneGoesTobot](https://t.me/PlaneGoesTobot)
 
 
 ## How to use
@@ -18,7 +18,7 @@ On Telegram: [@Plane_Goes_To_bot](https://t.me/Plane_Goes_To_bot)
 ```bash
 NETWORK_NAME=plane_bot
 
-TELEGRAM_BOT_TOKEN=...
+TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_BOT_USERNAME=your_bot_username
 TELEGRAM_BOT_WEBHOOK_URL=https://your.domain.com
 TELEGRAM_BOT_WEBHOOK_DISABLE=0 # 0: Using your own domain, 1: Using ngrok domain
@@ -26,7 +26,7 @@ TELEGRAM_BOT_WEBHOOK_DISABLE=0 # 0: Using your own domain, 1: Using ngrok domain
 APPLICATION_PORT=8000
 APPLICATION_HOST_NAME=plane_bot_app
 
-NGROK_AUTHTOKEN=...
+NGROK_AUTHTOKEN=your_ngrok_token
 NGROK_HOST_NAME=ngrok
 NGROK_PORT=4040
 NGROK_REGION=us
